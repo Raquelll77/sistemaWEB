@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Usuario</title>
+</head>
+<body>
+    <style>
+        .container{
+            width: 80%;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select{
+            background-color: rgba(255, 253, 253, 0.877);
+            border: 1px solid #ccc;
+            margin-bottom: 15px;
+            padding: 8px;
+            border-radius: 4px;
+            width: 100%;
+        }
+        input:focus {
+            border-color: rgb(0, 140, 255);
+        }
+
+        select{
+            height: 40px;
+            margin-bottom: 40px;
+        }
+        button{
+            height: 40px;
+            width: 30%;
+            text-align: center;
+            margin-bottom: 15px;
+            border: none;
+            background-color: #f01a1a;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        
+        button:hover{
+            color: #918686c5;
+        }
+        .button-align{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            padding-bottom: 30px;
+        }
+        h2{
+            padding-top: 30px;
+            padding-bottom: 20px;
+        }
+
+    </style>
+    <div class="container">    
+        <h2>Editar Usuario</h2>
+        <form id="edit-user-form">
+            <div style="display: flex; justify-content: space-between;">
+                <div style="width: 48%;">
+                    <label for="usuario">Usuario:</label>
+                    <input type="text" id="usuario" name="usuario" readonly>
+                </div>
+                <div style="width: 48%;">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+                <div style="width: 48%;">
+                    <label for="correo">Correo:</label>
+                    <input type="email" id="correo" name="correo" required>
+                </div>
+                <div style="width: 48%;">
+                    <label for="tienda">Tienda:</label>
+                    <input type="text" id="tienda" name="tienda" required>
+                </div>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+                <div style="width: 48%;">
+                    <label for="roll">Roll:</label>
+                    <select id="roll" name="roll" required>
+                        <option value="admin">Admin</option>
+                        <option value="user">User</option>
+                        <option value="manager">Manager</option>
+                    </select>
+                </div>
+            </div>
+            
+            <input type="hidden" id="idusuario" name="idusuario">
+            <div class="button-align">
+                <button type="submit">Guardar</button>
+                <button type="button" onclick="disableUser()">Inhabilitar</button>
+                <button type="button" onclick="cancelEdit()">Cancelar</button>                
+            </div>
+            
+        </form>
+    </div>
+</body>
+</html>

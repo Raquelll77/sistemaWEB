@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exportar Datos a Facturación</title>
+</head>
+<body>
+    <style>
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <div class="container">
+        <h2>Exportar Datos a Facturación</h2>
+        <form id="export-form">
+            <label for="archivo">Seleccionar Archivo CSV:</label>
+            <input type="file" id="archivo" name="archivo" accept=".csv" required>
+            <button type="submit">Exportar Datos</button>
+        </form>
+        <button onclick="borrarDatos()">Borrar Todos los Datos</button>
+        <div id="mensaje"></div>
+    </div>
